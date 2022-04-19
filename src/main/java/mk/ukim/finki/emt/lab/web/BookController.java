@@ -34,6 +34,15 @@ public class BookController {
                 .orElseGet(()-> ResponseEntity.notFound().build());
     }
 
+    @GetMapping("/dto/{id}")
+    public ResponseEntity<BookDto> findByIdDtp(@PathVariable Long id)
+    {
+        return this.bookService.findById(id)
+                .map(book -> ResponseEntity.ok().body(new BookDto(book.getName(),book.getCategory(), book.getAuthor().getId(),
+                        book.getAvailableCopies())))
+                .orElseGet(()-> ResponseEntity.notFound().build());
+    }
+
     @PostMapping("/add")
     public  ResponseEntity<Book> save(@RequestBody BookDto bookDto)
     {
