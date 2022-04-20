@@ -1,7 +1,6 @@
 package mk.ukim.finki.emt.lab.web;
 
 import mk.ukim.finki.emt.lab.model.Author;
-import mk.ukim.finki.emt.lab.model.enumerations.Category;
 import mk.ukim.finki.emt.lab.service.AuthorService;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
